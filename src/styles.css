@@ -43,6 +43,10 @@ snack-bar-container.success {
   }
 
 
+  snack-bar-container.warn {
+    background-color: #fa6f24;
+    color : #fff;
+  }
   snack-bar-container.notification simple-snack-bar{
     font-size: 18px !important;
     font-weight: bold;
@@ -83,3 +87,12 @@ mat-footer-row mat-footer-cell{
             height: 32px;
             width: 32px;
         }
+
+        
+        /* for dialog pop-up */
+  .btn-dialog-close{
+    width: 45px;
+    min-width: 0px !important;
+    height: 40px;
+    padding: 0px !important;
+  }

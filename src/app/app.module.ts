@@ -40,6 +40,7 @@ import { DatePipe } from '@angular/common';
     DepartmentService,
     DatePipe
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[EmployeeComponent]
 })
 export class AppModule { }

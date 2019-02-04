@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { FormGroup, FormControl, Validators } from "@angular/forms"
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { DatePipe } from '@angular/common';
+import * as _ from 'lodash';
 
 @Injectable({
   providedIn: 'root'
@@ -66,7 +67,7 @@ export class EmployeeService {
         fullName: employee.fullName,
         email: employee.email,
         mobile: employee.mobile,
-        city: employee.location,
+        city: employee.city,
         gender: employee.gender,
         department: employee.department,
         hireDate: employee.hireDate == "" ? "" : this.datePipe.transform(employee.hireDate, 'yyyy-MM-dd'),
@@ -78,4 +79,7 @@ export class EmployeeService {
       this.employeeList.remove($key); 
     }
 
+    populateForm(employee) {
+      this.form.setValue(_.omit(employee,'departmentName'));
+    }
 }
