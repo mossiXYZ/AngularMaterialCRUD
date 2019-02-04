@@ -15,6 +15,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { EmployeeListComponent } from './employees/employee-list/employee-list.c
   ],
   providers: [
     EmployeeService,
-    DepartmentService
+    DepartmentService,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

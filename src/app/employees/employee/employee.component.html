@@ -52,11 +52,10 @@
                 </mat-form-field>
 
                 <mat-form-field>
-                    <input matInput [matDatepicker]="picker" placeholder="Hire Date" formControlName="hireDate">
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
-                  </mat-form-field>
-
+                        <input formControlName="hireDate" matInput [matDatepicker]="picker" placeholder="Hire Date">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
 
                 <div class="add-bottom-padding">
                     <mat-checkbox formControlName="isPermenent">Permanent Employee</mat-checkbox>

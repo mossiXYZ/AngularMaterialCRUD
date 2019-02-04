@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, FormControl, Validators } from "@angular/forms"
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { DatePipe } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
 
-  constructor(private firebase: AngularFireDatabase ) { }
+  constructor(private firebase: AngularFireDatabase , private datePipe: DatePipe) { }
 
   employeeList : AngularFireList<any>;
 
@@ -54,7 +55,7 @@ export class EmployeeService {
         city: employee.city,
         gender: employee.gender,
         department: employee.department,
-        hireDate: employee.hireDate,
+        hireDate: employee.hireDate == "" ? "" : this.datePipe.transform(employee.hireDate, 'yyyy-MM-dd'),
         isPermenent: employee.isPermenent,
         });
     }
@@ -68,7 +69,7 @@ export class EmployeeService {
         city: employee.location,
         gender: employee.gender,
         department: employee.department,
-        hireDate: employee.hireDate,
+        hireDate: employee.hireDate == "" ? "" : this.datePipe.transform(employee.hireDate, 'yyyy-MM-dd'),
         isPermenent: employee.isPermenent,
       });
     }
