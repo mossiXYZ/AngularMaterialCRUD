@@ -14,6 +14,7 @@ import { DepartmentService } from './shared/department.service';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
+import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 
 
 
@@ -21,7 +22,8 @@ import { environment } from 'src/environments/environment';
   declarations: [
     AppComponent,
     EmployeesComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    EmployeeListComponent
   ],
   imports: [
     BrowserModule,

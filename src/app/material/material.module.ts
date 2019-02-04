@@ -10,7 +10,9 @@ import { MatInputModule,
          MatCheckboxModule, 
          MatNativeDateModule, 
          MatButtonModule, 
-         MatSnackBarModule } from '@angular/material';
+         MatSnackBarModule, 
+         MatTableModule,
+         MatIconModule} from '@angular/material';
 
 @NgModule({
   declarations: [],
@@ -26,7 +28,9 @@ import { MatInputModule,
     MatNativeDateModule,
     MatCheckboxModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTableModule,
+    MatIconModule
 
   ],
   exports: [
@@ -40,7 +44,9 @@ import { MatInputModule,
     MatNativeDateModule,
     MatCheckboxModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTableModule,
+    MatIconModule
   ]
 })
 export class MaterialModule { }
