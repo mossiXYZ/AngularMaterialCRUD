@@ -44,7 +44,7 @@ import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dial
   ],
   bootstrap: [AppComponent],
   entryComponents:[
-    EmployeeComponent,
+     EmployeeComponent,
     MatConfirmDialogComponent]
 })
 export class AppModule { }
