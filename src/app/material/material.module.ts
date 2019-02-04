@@ -30,7 +30,9 @@ import { MatInputModule,
     MatButtonModule,
     MatSnackBarModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule,
+    Material.MatSortModule,
+    Material.MatPaginatorModule
 
   ],
   exports: [
@@ -46,7 +48,9 @@ import { MatInputModule,
     MatButtonModule,
     MatSnackBarModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule,
+    Material.MatSortModule,
+    Material.MatPaginatorModule
   ]
 })
 export class MaterialModule { }
