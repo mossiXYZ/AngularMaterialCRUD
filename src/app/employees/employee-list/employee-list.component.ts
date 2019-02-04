@@ -7,6 +7,7 @@ import { MatDialog, MatDialogConfig } from "@angular/material";
 
 import { DepartmentService } from 'src/app/shared/department.service';
 import { NotificationService } from 'src/app/shared/notification.service';
+import { DialogService } from 'src/app/shared/dialog.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -19,7 +20,8 @@ export class EmployeeListComponent implements OnInit {
   constructor(private employeeService: EmployeeService,
               private departmentService: DepartmentService,
               private dialog: MatDialog,
-              private notificationService: NotificationService) { }
+              private notificationService: NotificationService,
+              private dialogService: DialogService) { }
 
   listData: MatTableDataSource<any>;
   displayedColumns: string[] = ['fullName', 'email', 'mobile', 'city','departmentName','actions'];
@@ -79,9 +81,12 @@ export class EmployeeListComponent implements OnInit {
   }
 
   onDelete($key){
-    if(confirm('Are you sure to delete this record ?')){
-    this.employeeService.deleteEmployee($key);
-    this.notificationService.warn('! Deleted successfully');
-    }
+    this.dialogService.openConfirmDialog('Are you sure to delete this record ?')
+    .afterClosed().subscribe(res =>{
+      if(res){
+        this.employeeService.deleteEmployee($key);
+        this.notificationService.warn('! Deleted successfully');
+      }
+    });
   }
 }

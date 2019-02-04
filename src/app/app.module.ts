@@ -16,6 +16,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 import { DatePipe } from '@angular/common';
+import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dialog.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { DatePipe } from '@angular/common';
     AppComponent,
     EmployeesComponent,
     EmployeeComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    MatConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,8 @@ import { DatePipe } from '@angular/common';
     DatePipe
   ],
   bootstrap: [AppComponent],
-  entryComponents:[EmployeeComponent]
+  entryComponents:[
+    EmployeeComponent,
+    MatConfirmDialogComponent]
 })
 export class AppModule { }
