@@ -2,7 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import * as Material from "@angular/material";
 import {MatGridListModule} from '@angular/material/grid-list';
-import { MatInputModule, MatFormFieldModule, MatRadioModule, MatSelectModule, MatDatepickerModule, MatCheckboxModule, MatNativeDateModule, MatButtonModule } from '@angular/material';
+import { MatInputModule, 
+         MatFormFieldModule, 
+         MatRadioModule, 
+         MatSelectModule, 
+         MatDatepickerModule, 
+         MatCheckboxModule, 
+         MatNativeDateModule, 
+         MatButtonModule, 
+         MatSnackBarModule } from '@angular/material';
 
 @NgModule({
   declarations: [],
@@ -17,7 +25,9 @@ import { MatInputModule, MatFormFieldModule, MatRadioModule, MatSelectModule, Ma
     MatDatepickerModule,
     MatNativeDateModule,
     MatCheckboxModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule
+
   ],
   exports: [
     Material.MatToolbarModule,
@@ -29,7 +39,8 @@ import { MatInputModule, MatFormFieldModule, MatRadioModule, MatSelectModule, Ma
     MatDatepickerModule,
     MatNativeDateModule,
     MatCheckboxModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule
   ]
 })
 export class MaterialModule { }

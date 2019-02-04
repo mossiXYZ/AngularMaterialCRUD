@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from 'src/app/shared/employee.service';
+import { DepartmentService } from 'src/app/shared/department.service';
+import { NotificationService } from 'src/app/shared/notification.service';
 
 @Component({
   selector: 'app-employee',
@@ -8,21 +10,33 @@ import { EmployeeService } from 'src/app/shared/employee.service';
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor(private employeeService : EmployeeService) { }
-  startDate = new Date(1990, 0, 1);
+  constructor(
+    private employeeService : EmployeeService,
+    private departmentService: DepartmentService,
+    private notificationService : NotificationService
+  ) { }
 
-  departments = [
-    {id: 3, value: 'Dep 1'},
-    {id: 2, value: 'Dep 2'},
-    {id: 3, value: 'Dep 3'}
-  ]
+  startDate = new Date(1990, 0, 1);
 
   
   ngOnInit() {
+    this.employeeService.getEmployees();
   }
 
   onClear(){
     this.employeeService.form.reset();
     this.employeeService.initializeFormGroup();
+
+  }
+
+
+  onSubmit(){
+    if (this.employeeService.form.valid){
+      this.employeeService.insertEmployee(this.employeeService.form.value);
+      this.employeeService.form.reset();       
+      this.employeeService.initializeFormGroup();
+      this.notificationService.success('Submitted successfully');
+
+    }
   }
 }

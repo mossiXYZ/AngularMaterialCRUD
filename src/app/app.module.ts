@@ -8,6 +8,14 @@ import { EmployeeComponent } from './employees/employee/employee.component';
 import { EmployeeService } from './shared/employee.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { DepartmentService } from './shared/department.service';
+
+// Firebase Modules
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from 'src/environments/environment';
+
+
 
 @NgModule({
   declarations: [
@@ -19,10 +27,14 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     BrowserModule,
     MaterialModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig), // Main Angular fire module 
+    AngularFireDatabaseModule  // Firebase database module
+
   ],
   providers: [
-    EmployeeService
+    EmployeeService,
+    DepartmentService
   ],
   bootstrap: [AppComponent]
 })

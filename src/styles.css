@@ -30,3 +30,14 @@ mat-radio-group mat-radio-button {
 .button-row button{
     margin: 5px;
 }
+
+/* notifications */
+snack-bar-container.success{
+    background-color: rgb(0, 167, 36);
+    color: rgb(255, 255, 255)
+}
+
+snack-bar-container.notification simple-snack-bar{
+    font-size: 18px !important;
+    font-weight: bold;
+}
